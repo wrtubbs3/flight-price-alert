@@ -1,0 +1,46 @@
+defaults:
+  provider: amadeus
+  currency: USD
+  alert_threshold_usd: 10
+  max_results_per_search: 20
+
+queries:
+  - id: melbourne-holidays
+    name: Melbourne Christmas Family Trip
+    origins: [SEA, PAE]
+    destinations: [MEL]
+    passengers:
+      - type: adult
+        count: 2
+      - type: child
+        age: 8
+        count: 1
+      - type: child
+        age: 11
+        count: 1
+    outbound_date_range:
+      start: 2026-12-18
+      end: 2026-12-23
+    return_arrival_date_range:
+      start: 2027-01-02
+      end: 2027-01-10
+    trip_length_days:
+      min: 12
+      max: 18
+    constraints:
+      cabin: economy
+      max_stops_per_leg: 1
+      max_additional_stops_with_stopover: 1
+      max_total_duration_hours_per_leg: 30
+      layovers:
+        default_min_minutes: 75
+        default_max_minutes: 360
+        domestic_min_minutes: 60
+        domestic_max_minutes: 240
+        international_min_minutes: 120
+        international_max_minutes: 420
+      stopovers:
+        allowed_on: outbound
+        airports: [HNL, SYD]
+        min_days: 1
+        max_days: 3
