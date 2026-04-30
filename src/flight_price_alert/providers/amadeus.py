@@ -5,8 +5,8 @@ from datetime import datetime
 
 import httpx
 
-from flight_tracker.models import FlightLeg, FlightSegment, Itinerary, SearchTask
-from flight_tracker.providers.base import FlightProvider
+from flight_price_alert.models import FlightLeg, FlightSegment, Itinerary, SearchTask
+from flight_price_alert.providers.base import FlightProvider
 
 
 class AmadeusProvider(FlightProvider):

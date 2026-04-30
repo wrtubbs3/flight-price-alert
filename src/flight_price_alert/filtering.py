@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from datetime import timedelta
 
-from flight_tracker.config import QueryConfig
-from flight_tracker.models import Itinerary
+from flight_price_alert.config import QueryConfig
+from flight_price_alert.models import Itinerary
 
 
 def filter_itineraries(query: QueryConfig, itineraries: list[Itinerary]) -> list[Itinerary]:

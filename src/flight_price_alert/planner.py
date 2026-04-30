@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from datetime import timedelta
 
-from flight_tracker.config import AppConfig, QueryConfig
-from flight_tracker.models import SearchTask
+from flight_price_alert.config import AppConfig, QueryConfig
+from flight_price_alert.models import SearchTask
 
 
 def build_search_tasks(config: AppConfig) -> list[SearchTask]:

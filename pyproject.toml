@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "flight-price-tracker"
+name = "flight-price-alert"
 version = "0.1.0"
 description = "Scheduled flight price tracker with pluggable providers and email alerts."
 readme = "README.md"
@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.scripts]
-flight-tracker = "flight_tracker.cli:main"
+flight-price-alert = "flight_price_alert.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

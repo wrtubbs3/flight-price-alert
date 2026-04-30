@@ -1,4 +1,4 @@
-name: Flight Tracker
+name: Flight Price Alert
 
 on:
   workflow_dispatch:
@@ -59,7 +59,7 @@ jobs:
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        run: python -m flight_tracker --config config/queries.yaml --mode "${{ steps.mode.outputs.mode }}"
+        run: python -m flight_price_alert --config config/queries.yaml --mode "${{ steps.mode.outputs.mode }}"
 
       - name: Commit state file
         shell: bash

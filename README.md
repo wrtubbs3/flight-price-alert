@@ -43,14 +43,14 @@ $env:EMAIL_TO="your-address@gmail.com"
 4. Run a dry summary:
 
 ```powershell
-python -m flight_tracker --config config/queries.yaml --mode daily --dry-run
+python -m flight_price_alert --config config/queries.yaml --mode daily --dry-run
 ```
 
 5. Send emails for real:
 
 ```powershell
-python -m flight_tracker --config config/queries.yaml --mode daily
-python -m flight_tracker --config config/queries.yaml --mode weekly
+python -m flight_price_alert --config config/queries.yaml --mode daily
+python -m flight_price_alert --config config/queries.yaml --mode weekly
 ```
 
 ## GitHub Actions Secrets
@@ -87,14 +87,14 @@ See `config/queries.example.yaml`.
 
 ## Architecture
 
-- `src/flight_tracker/config.py`: config models and loading
-- `src/flight_tracker/planner.py`: expands flexible rules into provider search tasks
-- `src/flight_tracker/providers/`: provider interface and Amadeus implementation
-- `src/flight_tracker/filtering.py`: itinerary filtering and normalization
-- `src/flight_tracker/state.py`: state persistence
-- `src/flight_tracker/reporting.py`: daily and weekly email rendering
-- `src/flight_tracker/emailer.py`: SMTP delivery
-- `.github/workflows/flight-tracker.yml`: scheduled runs
+- `src/flight_price_alert/config.py`: config models and loading
+- `src/flight_price_alert/planner.py`: expands flexible rules into provider search tasks
+- `src/flight_price_alert/providers/`: provider interface and Amadeus implementation
+- `src/flight_price_alert/filtering.py`: itinerary filtering and normalization
+- `src/flight_price_alert/state.py`: state persistence
+- `src/flight_price_alert/reporting.py`: daily and weekly email rendering
+- `src/flight_price_alert/emailer.py`: SMTP delivery
+- `.github/workflows/flight-price-alert.yml`: scheduled runs
 
 ## Running in GitHub Actions
 

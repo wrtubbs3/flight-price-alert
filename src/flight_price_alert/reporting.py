@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from flight_tracker.models import Itinerary
-from flight_tracker.state import PriceDrop
+from flight_price_alert.models import Itinerary
+from flight_price_alert.state import PriceDrop
 
 
 def build_daily_email(price_drops: list[PriceDrop]) -> tuple[str, str]:
     if not price_drops:
-        return ("Flight Tracker: no qualifying price drops", "No tracked itinerary dropped beyond its configured threshold today.")
+        return ("Flight Price Alert: no qualifying price drops", "No tracked itinerary dropped beyond its configured threshold today.")
 
     lines = ["The following tracked itineraries dropped beyond threshold:", ""]
     for drop in sorted(price_drops, key=lambda item: item.current_price):
@@ -25,7 +25,7 @@ def build_daily_email(price_drops: list[PriceDrop]) -> tuple[str, str]:
                 "",
             ]
         )
-    return ("Flight Tracker: price drops detected", "\n".join(lines).strip())
+    return ("Flight Price Alert: price drops detected", "\n".join(lines).strip())
 
 
 def build_weekly_email(itineraries: list[Itinerary]) -> tuple[str, str]:
@@ -44,4 +44,4 @@ def build_weekly_email(itineraries: list[Itinerary]) -> tuple[str, str]:
                 f"fare={itinerary.fare_label} | stopover={itinerary.stopover_label or 'none'}"
             )
         lines.append("")
-    return ("Flight Tracker: weekly summary", "\n".join(lines).strip())
+    return ("Flight Price Alert: weekly summary", "\n".join(lines).strip())

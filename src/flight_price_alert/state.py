@@ -4,7 +4,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from flight_tracker.models import Itinerary
+from flight_price_alert.models import Itinerary
 
 
 @dataclass(slots=True)

@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import argparse
 
-from flight_tracker.config import load_config
-from flight_tracker.emailer import send_email
-from flight_tracker.runner import run
+from flight_price_alert.config import load_config
+from flight_price_alert.emailer import send_email
+from flight_price_alert.runner import run
 
 
 def build_parser() -> argparse.ArgumentParser:

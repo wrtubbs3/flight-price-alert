@@ -7,7 +7,7 @@ from typing import Literal
 import yaml
 from pydantic import BaseModel, Field, field_validator, model_validator
 
-from flight_tracker.models import CabinClass, StopoverDirection
+from flight_price_alert.models import CabinClass, StopoverDirection
 
 
 class DefaultsConfig(BaseModel):

@@ -1,4 +1,4 @@
-from flight_tracker.cli import main
+from flight_price_alert.cli import main
 
 
 if __name__ == "__main__":

@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from flight_tracker.config import AppConfig
-from flight_tracker.filtering import filter_itineraries
-from flight_tracker.models import Itinerary, QueryMode
-from flight_tracker.planner import build_search_tasks
-from flight_tracker.providers import AmadeusProvider, FlightProvider
-from flight_tracker.reporting import build_daily_email, build_weekly_email
-from flight_tracker.state import StateStore
+from flight_price_alert.config import AppConfig
+from flight_price_alert.filtering import filter_itineraries
+from flight_price_alert.models import Itinerary, QueryMode
+from flight_price_alert.planner import build_search_tasks
+from flight_price_alert.providers import AmadeusProvider, FlightProvider
+from flight_price_alert.reporting import build_daily_email, build_weekly_email
+from flight_price_alert.state import StateStore
 
 
 def run(config: AppConfig, mode: QueryMode, *, dry_run: bool = False) -> tuple[str, str, bool, bool]:
