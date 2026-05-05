@@ -11,9 +11,9 @@ on:
         options:
           - daily
           - weekly
-  schedule:
-    - cron: "13 14 * * *"
-    - cron: "27 15 * * 0"
+  # schedule:
+  #   - cron: "13 14 * * *"
+  #   - cron: "27 15 * * 0"
 
 permissions:
   contents: write
